@@ -19,7 +19,7 @@ async function main() {
   
     const path = [WETH, DAI];
 
-    const ROUTER = await ethers.getContractAt("IUniswapV2", ROUTER_ADDRESS, impersonatedSigner);
+    const ROUTER = await ethers.getContractAt("IUniswapV2Router", ROUTER_ADDRESS, impersonatedSigner);
 
     await WETH_Contract.approve(ROUTER, ethers.parseEther("2") );
 
@@ -42,5 +42,3 @@ main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
 });
-
-// npm install --save-dev hardhat
